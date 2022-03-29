@@ -1,0 +1,12 @@
+*.iws
+*.iml
+*.imr
+.idea/
+.DS_Store
+.vscode/
+.envrc
+node_modules/
+dist/
+build/
+cdk.out/
+cdk.context.json
