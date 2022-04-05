@@ -38,7 +38,7 @@ export class NATGateway extends Resource<ec2.CfnNatGateway> {
   create(): ec2.CfnNatGateway {
     return new ec2.CfnNatGateway(this.scope, this.logicalId, {
       allocationId: this.eip.attrAllocationId,
-      subnetId: this.subnet.attrId,
+      subnetId: this.subnet.ref,
       tags: [
         {
           key: 'Name',

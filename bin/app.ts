@@ -10,6 +10,7 @@ import { CognitoStack } from '@/lib/cognito-stack'
 import { S3Stack } from '@/lib/s3-stack'
 import { ECRStack } from '@/lib/ecr-stack'
 import { RDSStack } from '@/lib/rds-stack'
+import { EKSStack } from '@/lib/eks-stack'
 
 const app = new App()
 const env = getEnv(app)
@@ -49,3 +50,13 @@ const rds = new RDSStack(app, `${env}-${project}-rds`, {
 })
 rds.addDependency(vpc)
 rds.addDependency(securityGroup)
+
+// EKS
+const eks = new EKSStack(app, `${env}-${project}-eks`, {
+  vpc: vpc.vpc,
+  publicSubnets: vpc.publicSubnets,
+  privateSubnets: vpc.privateSubnets,
+  securityGroup: securityGroup.publicSecurityGroup,
+})
+eks.addDependency(vpc)
+eks.addDependency(securityGroup)

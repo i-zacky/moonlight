@@ -13,6 +13,8 @@ export class Subnet extends Resource<ec2.CfnSubnet> {
 
   private readonly availabilityZone: string
 
+  private readonly mapPublicIpOnLaunch: boolean
+
   private constructor(
     scope: Construct,
     vpc: ec2.CfnVPC,
@@ -45,7 +47,7 @@ export class Subnet extends Resource<ec2.CfnSubnet> {
       vpcId: this.vpc.ref,
       cidrBlock: this.cidrBlock,
       availabilityZone: this.availabilityZone,
-      mapPublicIpOnLaunch: false,
+      mapPublicIpOnLaunch: true,
       tags: [
         {
           key: 'Name',

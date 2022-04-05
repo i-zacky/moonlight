@@ -27,8 +27,8 @@ export class RouteTableAssociation extends Resource<ec2.CfnSubnetRouteTableAssoc
 
   create(): ec2.CfnSubnetRouteTableAssociation {
     return new ec2.CfnSubnetRouteTableAssociation(this.scope, this.logicalId, {
-      subnetId: this.subnet.attrId,
-      routeTableId: this.routeTable.attrRouteTableId,
+      subnetId: this.subnet.ref,
+      routeTableId: this.routeTable.ref,
     })
   }
 }

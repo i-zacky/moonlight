@@ -10,3 +10,4 @@ dist/
 build/
 cdk.out/
 cdk.context.json
+.kube/

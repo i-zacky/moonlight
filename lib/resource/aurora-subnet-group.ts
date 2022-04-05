@@ -21,7 +21,7 @@ export class AuroraSubnetGroup extends Resource<rds.CfnDBSubnetGroup> {
     return new rds.CfnDBSubnetGroup(this.scope, 'AuroraSubnetGroup', {
       dbSubnetGroupName: `${this.env}-${this.project}-aurora-sng`,
       dbSubnetGroupDescription: `${this.env}-${this.project}-aurora-sng`,
-      subnetIds: this.subnets.map((subnet) => subnet.attrId),
+      subnetIds: this.subnets.map((subnet) => subnet.ref),
       tags: [
         {
           key: 'Name',

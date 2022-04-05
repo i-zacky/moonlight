@@ -33,3 +33,8 @@ export const getRegion = (scope: Construct): string => {
   const { region } = new ScopedAws(scope)
   return region
 }
+
+export const getStackName = (scope: Construct): string => {
+  const { stackName } = new ScopedAws(scope)
+  return stackName
+}

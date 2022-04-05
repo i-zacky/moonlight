@@ -25,7 +25,7 @@ export class InternetGateway extends Resource<ec2.CfnInternetGateway> {
     })
     new ec2.CfnVPCGatewayAttachment(this.scope, 'VPCGatewayAttachment', {
       vpcId: this.vpc.ref,
-      internetGatewayId: igw.attrInternetGatewayId,
+      internetGatewayId: igw.ref,
     })
 
     return igw

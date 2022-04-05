@@ -1,4 +1,4 @@
-import { VPC, ACM, Cognito, RDS } from '@/env/env'
+import { VPC, ACM, Cognito, RDS, EC2, EKS } from '@/env/env'
 
 export const vpc: VPC = {
   CIDR: '10.10.0.0/16',
@@ -30,4 +30,16 @@ export const rds: RDS = {
   DATABASE_NAME: 'dev_leone_db',
   DATABASE_UER: 'postgresql',
   DATABASE_PASSWORD: 'paJydVmA3z7vqEkr',
+}
+
+export const ec2: EC2 = {
+  SSH_KEY_NAME: 'dev-leone-bastion',
+}
+
+export const eks: EKS = {
+  INSTANCE_TYPE: 't3.medium',
+  DISK_SIZE: 20,
+  DESIRED_SIZE: 3,
+  MAX_SIZE: 3,
+  MIN_SIZE: 1,
 }

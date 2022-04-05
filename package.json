@@ -5,7 +5,7 @@
   "author": "i-zacky <aizaki.takayuki@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf build",
+    "clean": "rimraf dist cdk.out",
     "lint": "prettier --check . --ignore-path .gitignore",
     "lint:fix": "prettier --write . --ignore-path .gitignore",
     "build": "tsc",
@@ -13,7 +13,7 @@
     "cdk": "cdk"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.17.0",
+    "aws-cdk-lib": "^2.19.0",
     "constructs": "^10.0.98",
     "lodash": "^4.17.21",
     "source-map-support": "^0.5.21"
@@ -21,7 +21,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.180",
     "@types/node": "^14.18.12",
-    "aws-cdk": "^2.17.0",
+    "aws-cdk": "^2.19.0",
     "prettier": "^2.6.1",
     "rimraf": "^3.0.2",
     "ts-node": "^10.7.0",

@@ -30,9 +30,23 @@ export declare interface RDS {
   DATABASE_PASSWORD: string
 }
 
+export declare interface EC2 {
+  SSH_KEY_NAME: string
+}
+
+export declare interface EKS {
+  INSTANCE_TYPE: string
+  DISK_SIZE: number
+  DESIRED_SIZE: number
+  MAX_SIZE: number
+  MIN_SIZE: number
+}
+
 export declare interface EnvParam {
   vpc: VPC
   acm: ACM
   cognito: Cognito
   rds: RDS
+  ec2: EC2
+  eks: EKS
 }

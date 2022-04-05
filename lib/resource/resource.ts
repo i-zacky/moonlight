@@ -1,6 +1,6 @@
 import { Construct } from 'constructs'
 import { EnvParam } from '@/env/env'
-import { getEnv, getProject, getParam, getRegion } from '@/env/env-helper'
+import { getEnv, getProject, getParam, getRegion, getStackName } from '@/env/env-helper'
 
 export abstract class Resource<T> {
   public readonly scope: Construct
@@ -11,6 +11,8 @@ export abstract class Resource<T> {
 
   public readonly project: string
 
+  public readonly stackName: string
+
   public readonly param: EnvParam
 
   protected constructor(scope: Construct) {
@@ -18,6 +20,7 @@ export abstract class Resource<T> {
     this.region = getRegion(scope)
     this.env = getEnv(scope)
     this.project = getProject(scope)
+    this.stackName = getStackName(scope)
     this.param = getParam(scope)
   }
 

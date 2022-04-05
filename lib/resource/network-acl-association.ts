@@ -27,7 +27,7 @@ export class NetworkAclAssociation extends Resource<ec2.CfnSubnetNetworkAclAssoc
 
   create(): ec2.CfnSubnetNetworkAclAssociation {
     return new ec2.CfnSubnetNetworkAclAssociation(this.scope, this.logicalId, {
-      subnetId: this.subnet.attrId,
+      subnetId: this.subnet.ref,
       networkAclId: this.nacl.ref,
     })
   }

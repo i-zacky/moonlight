@@ -33,7 +33,7 @@ export class Route extends Resource<ec2.CfnRoute> {
   create(): ec2.CfnRoute {
     if (this.gateway instanceof ec2.CfnInternetGateway) {
       return new ec2.CfnRoute(this.scope, this.logicalId, {
-        routeTableId: this.routeTable.attrRouteTableId,
+        routeTableId: this.routeTable.ref,
         destinationCidrBlock: '0.0.0.0/0',
         gatewayId: this.gateway.attrInternetGatewayId,
       })
@@ -41,7 +41,7 @@ export class Route extends Resource<ec2.CfnRoute> {
 
     if (this.gateway instanceof ec2.CfnNatGateway) {
       return new ec2.CfnRoute(this.scope, this.logicalId, {
-        routeTableId: this.routeTable.attrRouteTableId,
+        routeTableId: this.routeTable.ref,
         destinationCidrBlock: '0.0.0.0/0',
         natGatewayId: this.gateway.ref,
       })
