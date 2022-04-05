@@ -56,7 +56,6 @@ const eks = new EKSStack(app, `${env}-${project}-eks`, {
   vpc: vpc.vpc,
   publicSubnets: vpc.publicSubnets,
   privateSubnets: vpc.privateSubnets,
-  securityGroup: securityGroup.publicSecurityGroup,
 })
 eks.addDependency(vpc)
 eks.addDependency(securityGroup)

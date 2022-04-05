@@ -15,7 +15,6 @@ interface EKSStackProps extends StackProps {
   vpc: ec2.CfnVPC
   publicSubnets: SubnetProps[]
   privateSubnets: SubnetProps[]
-  securityGroup: ec2.CfnSecurityGroup
 }
 
 export class EKSStack extends Stack {
