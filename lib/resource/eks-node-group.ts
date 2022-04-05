@@ -1,5 +1,5 @@
 import { Construct } from 'constructs'
-import { aws_iam as iam, aws_ec2 as ec2, aws_autoscaling as autoscaling, aws_eks as eks, Fn } from 'aws-cdk-lib'
+import { aws_iam as iam, aws_ec2 as ec2, aws_eks as eks } from 'aws-cdk-lib'
 import { Resource } from '@/lib/resource/resource'
 import { SubnetProps } from '@/lib/eks-stack'
 

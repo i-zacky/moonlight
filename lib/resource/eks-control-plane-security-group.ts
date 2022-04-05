@@ -1,5 +1,5 @@
 import { Construct } from 'constructs'
-import { aws_ec2 as ec2, CfnOutput } from 'aws-cdk-lib'
+import { aws_ec2 as ec2 } from 'aws-cdk-lib'
 import { Resource } from '@/lib/resource/resource'
 
 export class EKSControlPlaneSecurityGroup extends Resource<ec2.CfnSecurityGroup> {

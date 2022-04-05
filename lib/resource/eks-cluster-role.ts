@@ -1,5 +1,5 @@
 import { Construct } from 'constructs'
-import { aws_iam as iam, CfnOutput } from 'aws-cdk-lib'
+import { aws_iam as iam } from 'aws-cdk-lib'
 import { Resource } from '@/lib/resource/resource'
 
 export class EKSClusterRole extends Resource<iam.Role> {
