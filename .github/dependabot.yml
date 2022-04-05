@@ -1,16 +1,16 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: "/"
+    directory: '/'
     schedule:
       interval: daily
-      time: "09:00"
-      timezone: "Asia/Tokyo"
+      time: '09:00'
+      timezone: 'Asia/Tokyo'
     open-pull-requests-limit: 10
     reviewers:
       - i-zacky
     commit-message:
-      prefix: "chore"
-      prefix-development: "chore"
+      prefix: 'chore'
+      prefix-development: 'chore'
       include: scope
     target-branch: master

@@ -41,5 +41,5 @@ export const eks: EKS = {
   DISK_SIZE: 20,
   DESIRED_SIZE: 3,
   MAX_SIZE: 3,
-  MIN_SIZE: 1,
+  MIN_SIZE: 3,
 }

@@ -12,7 +12,7 @@ export class EKSClusterRole extends Resource<iam.Role> {
   }
 
   create(): iam.Role {
-    return new iam.Role(this.scope, 'EKSClusterRole', {
+    const role = new iam.Role(this.scope, 'EKSClusterRole', {
       roleName: `${this.env}-${this.project}-eks-cluster-role`,
       description: `${this.env}-${this.project}-eks-cluster-role`,
       path: '/',
@@ -22,5 +22,31 @@ export class EKSClusterRole extends Resource<iam.Role> {
         iam.ManagedPolicy.fromAwsManagedPolicyName('AmazonEKSServicePolicy'),
       ],
     })
+
+    new iam.Policy(this.scope, 'CloudWatchMetricsPolicy', {
+      policyName: `${this.env}-${this.project}-cloudwatch-metrics-policy`,
+      roles: [role],
+      statements: [
+        new iam.PolicyStatement({
+          actions: ['cloudwatch:PutMetricData'],
+          effect: iam.Effect.ALLOW,
+          resources: ['*'],
+        }),
+      ],
+    })
+
+    new iam.Policy(this.scope, 'ELBPermissionPolicy', {
+      policyName: `${this.env}-${this.project}-elb-permission-policy`,
+      roles: [role],
+      statements: [
+        new iam.PolicyStatement({
+          actions: ['ec2:DescribeAccountAttributes', 'ec2:DescribeAddresses', 'ec2:DescribeInternetGateways'],
+          effect: iam.Effect.ALLOW,
+          resources: ['*'],
+        }),
+      ],
+    })
+
+    return role
   }
 }

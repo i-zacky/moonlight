@@ -95,7 +95,14 @@ const createSubnet = (
     `PublicSubnet${az}`,
     `${env}-${project}-public-${az.toLowerCase()}`,
     param.vpc[`PUBLIC_SUBNET_CIDR_${az}`],
-    `${region}${az.toLowerCase()}`
+    `${region}${az.toLowerCase()}`,
+    true,
+    [
+      {
+        key: 'kubernetes.io/role/elb',
+        value: '1',
+      },
+    ]
   )
   const publicRouteTable = RouteTable.create(
     scope,
@@ -114,7 +121,14 @@ const createSubnet = (
     `PrivateSubnet${az}`,
     `${env}-${project}-private-${az.toLowerCase()}`,
     param.vpc[`PRIVATE_SUBNET_CIDR_${az}`],
-    `${region}${az.toLowerCase()}`
+    `${region}${az.toLowerCase()}`,
+    false,
+    [
+      {
+        key: 'kubernetes.io/role/internal-elb',
+        value: '1',
+      },
+    ]
   )
   const eip = ElasticIP.create(scope, `NatEIP${az}`, `${env}-${project}-eip-${az.toLowerCase()}`)
   const natgw = NATGateway.create(
