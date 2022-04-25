@@ -13,7 +13,7 @@
     "cdk": "cdk"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.20.0",
+    "aws-cdk-lib": "^2.21.1",
     "constructs": "^10.0.122",
     "lodash": "^4.17.21",
     "source-map-support": "^0.5.21"
