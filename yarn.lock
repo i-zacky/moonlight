@@ -119,10 +119,10 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-constructs@^10.1.7:
-  version "10.1.7"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.1.7.tgz#d96fbeedb8d091720f4d3347c955bd42593abaa2"
-  integrity sha512-U4zMM7Iqa81hzLSfof9IW9R7kUWSMdhzV2JS8lXGISRFXljZrd4qwzYxhSO/VMB+CS24Tt0/YYLyNxET+6/3Mg==
+constructs@^10.1.11:
+  version "10.1.11"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.1.11.tgz#2e55e100b1dc0723f0ff99cec3025702f3ba0676"
+  integrity sha512-VojJd35T7VY3mq9DExDWKxXdOB2WJZK4YtQlrljwP8pBcH9pAw8RzFf358KN8aRj1Bi5oAY+fOpt3DFsPnrm7w==
 
 create-require@^1.1.0:
   version "1.1.1"
